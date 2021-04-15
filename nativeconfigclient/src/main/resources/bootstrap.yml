@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: configclient
+  cloud:
+    config:
+      uri: http://localhost:8762  #本地config server访问路径
+      fail-fast: true         #设置客户端优先判断config server 获取是否正常
+      profile: dev
+
+#通过spring.pplication.name 结合 spring.cloud.config.profile
+#拼接目标配置文件名，configclient-dev.yml,去config server中查找该文件
